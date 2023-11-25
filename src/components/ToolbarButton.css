@@ -1,0 +1,46 @@
+.toolbar-button {
+    display: flex;
+    appearance: none;
+    border: none;
+    background-color: transparent;
+    padding: calc(var(--y-padding) / 2) 0;
+}
+
+.toolbar-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: max(calc(var(--x-padding)) / 2, 4px);
+    max-width: max-content;
+    max-height: max-content;
+    border-radius: calc(var(--content-size) / 2);
+    padding: 0 var(--x-padding);
+}
+
+.toolbar-button:hover .toolbar-button-container {
+    background-color: color-mix(in srgb, currentColor 15%, transparent);
+}
+
+.toolbar-button:active .toolbar-button-container {
+    background-color: color-mix(in srgb, currentColor 30%, transparent);
+}
+
+.toolbar-button-container .toolbar-button-icon {
+    width: calc(var(--content-size) + 2px);
+    height: calc(var(--content-size) + 2px);
+    mask-size: contain;
+    background-color: currentColor;
+}
+
+.toolbar-button-container .toolbar-button-label {
+    font-size: var(--content-size);
+    white-space: nowrap;
+}
+
+[data-mode=icons] .toolbar-button-container > *:not(.toolbar-button-icon) {
+    display: none;
+}
+
+[data-mode=text] .toolbar-button-container > *:not(.toolbar-button-label) {
+    display: none;
+}

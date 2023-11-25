@@ -1,0 +1,22 @@
+.toolbar {
+    display: flex;
+    gap: 4px;
+    background-color: #323234;
+    height: var(--height, 40px);
+    width: 100%;
+    padding-inline: calc(var(--y-padding) / 2);
+    --x-padding: calc((var(--height) - var(--y-padding) - 16px) / 2);
+    --y-padding: calc(var(--height) * 0.1 * 2);
+    --content-size: min(var(--height) / 1.5, 1rem);
+}
+
+.toolbar[data-accent] {
+    background-color: #1c1b22;
+}
+
+.toolbar-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-block: 1rem;
+}
